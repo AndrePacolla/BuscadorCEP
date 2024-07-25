@@ -1,0 +1,24 @@
+.container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:linear-gradient(#f0b800,#e4cd81);
+}
+
+.title{
+    font-size: 85px;
+    color: white;
+    animation: flipTitle ease-in-out 1.5s;
+}
+
+
+@keyframes flipTitle{
+from{
+transform: rotateX(100deg);
+}
+to{
+transform: rotateX(0deg);
+}
+}
