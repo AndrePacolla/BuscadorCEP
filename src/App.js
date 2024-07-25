@@ -9,7 +9,7 @@ function App() {
       <div className="containerinput">
         <input
         type="text"
-        placeholder="Digite seu CEP"
+        placeholder="Digite seu CEP . . ."
         />
 
         <button className="buttonSearch">
@@ -20,11 +20,11 @@ function App() {
       <main className='main'>
         
       <h2>CEP: 13067-366</h2>
-      <span>Rua Maria Aparecida dos Reis Neves</span>
+      <span>Rua: Maria Aparecida dos Reis Neves</span>
       <span>Complemento: Bloco 34A AP 13</span>
-      <span>Vila PAdre Anchieta</span>
-      <span>Campinas-SP</span>
-      
+      <span>Bairro: Vila Padre Anchieta</span>
+      <span>Cidade: Campinas-SP</span>
+
       </main>
       
     </div>
