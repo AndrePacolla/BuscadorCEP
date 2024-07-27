@@ -5,22 +5,25 @@ import'./style.css';
 import api from './services/api'
 
 function App() {
-  const [input, setInput] = useState('')
+  const [input, setInput] = useState('');
+  const [cep, setCep] = useState({});
 
+  
  async function handleSearch(){
-
-    if(input === ''){
-      alert('Preencha algum CEP !')
-      return;
-    }
-
-
+    
+      if(input === ''){
+        alert('Insira algum CEP ')
+        return;
+      }
+    
     try{
       const response = await api.get(`${input}/json`);
-      console.log(response)
+      setCep(response.data)
+      setInput('')
 
     }catch{
       alert('OPs erro ao buscar CEP..')
+      setInput('');
     }
 
   }
@@ -35,6 +38,7 @@ function App() {
         placeholder="Digite seu CEP . . ."
         value = {input}
         onChange = {(e)=> setInput(e.target.value)}
+       
         />
 
         <button className="buttonSearch" onClick={handleSearch}>
@@ -44,11 +48,11 @@ function App() {
 
       <main className='main'>
         
-      <h2>CEP: 13067366</h2>
-      <span>Rua: Maria Aparecida dos Reis Neves</span>
-      <span>Complemento: Bloco 34A AP 13</span>
-      <span>Bairro: Vila Padre Anchieta</span>
-      <span>Cidade: Campinas-SP</span>
+      <h2>CEP: {cep.cep}</h2>
+      <span>{cep.logradouro}</span>
+      <span>Complemento:{cep.complemento}</span>
+      <span>{cep.bairro}</span>
+      <span>{cep.localidade} - {cep.uf}</span>
 
       </main>
       
