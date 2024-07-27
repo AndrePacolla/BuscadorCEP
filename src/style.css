@@ -65,7 +65,8 @@
     align-items: center;
     justify-content: center;
     gap: 15px;
-    background-color: white;
+    color: aliceblue;
+    background-color: rgba(22, 22, 22, 0.8);
     width: 600px;
     padding: 20px 0;
     border-radius: 15px ;
